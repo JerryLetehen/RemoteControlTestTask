@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bcd7b67cf9461c90c306f17c483244, type: 3}
+  m_Name: RemoteObjectViewConfig
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 542761235610797927, guid: 7f27a57495e464f97a777bc8d2386a49, type: 3}
+  animationTime: 3
+  typeMaterialPairs:
+  - type: 0
+    material: {fileID: 2100000, guid: 7a3c5f98bd7c54c30842a7619c834cf2, type: 2}
+  - type: 1
+    material: {fileID: 2100000, guid: f4840d959cb9447ff8a32326116e3baf, type: 2}
+  - type: 2
+    material: {fileID: 2100000, guid: c68676dc455434fe9a127fc8bbe5f8a5, type: 2}
+  - type: 3
+    material: {fileID: 2100000, guid: 16372ae17c25547e3a4c2e491e75ebce, type: 2}
