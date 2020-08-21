@@ -12,7 +12,7 @@ namespace Game
         [SerializeField] private RemoteObjectViewConfig config;
         [SerializeField] private Transform viewsHolder;
         
-        private readonly Dictionary<int, RemoteObjectView> viewsMap = new Dictionary<int, RemoteObjectView>();
+        private readonly Dictionary<string, RemoteObjectView> viewsMap = new Dictionary<string, RemoteObjectView>();
         private readonly List<RemoteObjectView> views = new List<RemoteObjectView>();
         
         public void CreateViews(int count)
@@ -28,20 +28,20 @@ namespace Game
             foreach (var objectData in data)
             {
                 var type = objectData.type;
-                var view = GetView(objectData.id);
+                var view = GetView(objectData.name);
                 view.Init(new RemoteObjectViewData(objectData.name, config.GetMaterial(type), objectData.coordinate.GetVector3(), config.AnimationTime));
             }
         }
 
-        private RemoteObjectView GetView(int id)
+        private RemoteObjectView GetView(string name) // there should be an ID as uniq data for each object
         {
-            if (viewsMap.TryGetValue(id, out var view))
+            if (viewsMap.TryGetValue(name, out var view))
             {
                 return view;
             }
 
             view = GetFreeView();
-            viewsMap.Add(id, view);
+            viewsMap.Add(name, view);
             return view;
         }
 
