@@ -26,12 +26,12 @@ namespace Game
         {
             var t = 0f;
             var startPos = transform.position;
-            var step = 1f / time;
             while (cancellationToken.IsCancellationRequested == false || t < 1f)
             {
-                transform.position = Vector3.Lerp(startPos, target, step * t);
+                var stepStartTime = Time.time;
+                transform.position = Vector3.Lerp(startPos, target, t);
                 await Task.Yield();
-                t += Time.deltaTime;
+                t += (Time.time - stepStartTime) / time;
             }
 
             if (cancellationToken.IsCancellationRequested == false)
